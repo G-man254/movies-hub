@@ -1,0 +1,18 @@
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Series 
+        link(rel="stylesheet", href="./output.css")
+        script(src="https://kit.fontawesome.com/2b0c1324c3.js" crossorigin="anonymous")
+    body(class="bg-[#141414] text-white p-5") 
+        main(class="text-xl p-5")
+            h1(class="text-4xl text-yellow-600 font-bold") Series Tv
+            div(class="mt-8 grid md:grid-cols-3 gap-4")
+                each series in data
+                    a(href=`/series/${series.id}`)
+                        img(src=`https://image.tmdb.org/t/p/w500${series.poster_path}`, alt="series.name")
+                        h2(class="text-xl text-yellow-600 font-bold hover:underline")= series.original_name
+                        p(class="text-md flex gap-3 items-center")
+                            img(src="/images/star-svgrepo-com.svg", alt="star-rating" class="w-6 h-6")
+                            span= series.vote_average

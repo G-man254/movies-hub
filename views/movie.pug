@@ -1,0 +1,18 @@
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title= data.title 
+        link(rel="stylesheet", href="/output.css")
+        script(src="https://kit.fontawesome.com/2b0c1324c3.js" crossorigin="anonymous")
+    body(class="bg-[#141414] text-white p-5")
+        div(class="grid grid-cols-2 gap-8 max-w-4xl mx-auto mt-28")
+            div 
+                img(src=`https://image.tmdb.org/t/p/w500${data.poster_path}` alt="data.title")
+            div
+                h1(class="font-bold text-5xl")= data.title
+                p(class="text-white mt-4 font-semibold flex items-center gap-2")
+                    img(src="/images/star-svgrepo-com.svg", alt="rating-star", class="w-6")
+                    span(class="text-xl")= data.vote_average
+
+                p(class="text-gray mt-4 text-lg")=data.overview 

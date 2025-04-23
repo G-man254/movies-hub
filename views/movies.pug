@@ -1,0 +1,111 @@
+html
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Movies 
+        link(rel="stylesheet", href="./output.css")
+        script(src="https://kit.fontawesome.com/2b0c1324c3.js" crossorigin="anonymous")
+    body(class="bg-[#141414] text-white p-5") 
+        main(class="text-xl p-5")
+            h1(class="text-4xl text-yellow-600 font-bold") Browse movies
+            div(class="mt-8 grid md:grid-cols-3 gap-4")
+                each movie in data
+                    a(href=`/movie/${movie.id}`)
+                        img(src=`https://image.tmdb.org/t/p/w500${movie.poster_path}`, alt="movie.title")
+                        h2(class="text-xl text-yellow-600 font-bold hover:underline")=  movie.original_title
+                        p(class="text-lg")= movie.release_date
+                        p(class="text-md flex gap-3 items-center")
+                            img(src="/images/star-svgrepo-com.svg", alt="star-rating" class="w-6 h-6")
+                            span= movie.vote_average
+            //- section(class="flex gap-5 mt-4 mb-4") 
+            //-     div(class="cursor-pointer hover:opacity-80")
+            //-         a 
+            //-             img(src="/images/action-card.webp", alt="Action" class="rounded-md")
+            //-     div(class=" flex flex-col justify-center") 
+            //-         a 
+            //-             h2(class="text-2xl font-bold text-yellow-600 cursor-pointer hover:underline") ACTION 
+            //-         p(class="text-xl") 1hr 31mins
+            //-         section(class="flex gap-0 mt-4 mb-4 items-center") 
+            //-             p(class="text-xl border-r-3 border-yellow-600 pr-3") 5 / 10
+            //-                 //- i(class="fa-solid fa-star")
+            //-             button(class="bg-[#2f2f2f] hover:bg-transparent py-2 px-6 hover:font-semibold hover:text-yellow-600 rounded-lg") Rate this
+            //-         details 
+            //-             summary(class="cursor-pointer hover:text-yellow-600") Show more
+            //-             p “Meet the real heroes behind the action.” An adrenaline-fueled docuseries following filmmaker David Leitch and Kelly McCormick's 87North stunt team as they take center stage.
+            //- section(class="flex gap-5 mt-4 mb-4") 
+            //-     div(class="cursor-pointer hover:opacity-80")
+            //-         a 
+            //-             img(src="/images/back-in-action-card.webp", alt="Back in Action" class="rounded-md")
+            //-     div(class=" flex flex-col justify-center") 
+            //-         a 
+            //-             h2(class="text-2xl font-bold text-yellow-600 cursor-pointer hover:underline") BACK IN ACTION 
+            //-         p(class="text-xl") 1hr 50mins
+            //-         section(class="flex gap-0 mt-4 mb-4 items-center") 
+            //-             p(class="text-xl border-r-3 border-yellow-600 pr-3") 6 / 10
+            //-                 //- i(class="fa-solid fa-star")
+            //-             button(class="bg-[#2f2f2f] hover:bg-transparent py-2 px-6 hover:font-semibold hover:text-yellow-600 rounded-lg") Rate this
+            //-         details 
+            //-             summary(class="cursor-pointer hover:text-yellow-600") Show more
+            //-             p “They're living their best lies.” Fifteen years after vanishing from the CIA to start a family, elite spies Matt and Emily jump back into the world of espionage when their cover is blown.
+            //- section(class="flex gap-5 mt-4 mb-4") 
+            //-     div(class="cursor-pointer hover:opacity-80")
+            //-         a 
+            //-             img(src="/images/counterstrike-card.webp", alt="Counterstrike" class="rounded-md")
+            //-     div(class=" flex flex-col justify-center") 
+            //-         a 
+            //-             h2(class="text-2xl font-bold text-yellow-600 cursor-pointer hover:underline") COUNTERSTRIKE 
+            //-         p(class="text-xl") 1hr 32mins
+            //-         section(class="flex gap-0 mt-4 mb-4 items-center") 
+            //-             p(class="text-xl border-r-3 border-yellow-600 pr-3") 7 / 10
+            //-                 //- i(class="fa-solid fa-star")
+            //-             button(class="bg-[#2f2f2f] hover:bg-transparent py-2 px-6 hover:font-semibold hover:text-yellow-600 rounded-lg") Rate this
+            //-         details 
+            //-             summary(class="cursor-pointer hover:text-yellow-600") Show more
+            //-             p "When a hostage rescue mission creates a new enemy, Capt. Guerrero and his elite soldiers must face an ambush by a criminal group."
+            //- section(class="flex gap-5 mt-4 mb-4") 
+            //-     div(class="cursor-pointer hover:opacity-80")
+            //-         a 
+            //-             img(src="/images/demon-card.webp", alt="Demon city" class="rounded-md")
+            //-     div(class=" flex flex-col justify-center") 
+            //-         a 
+            //-             h2(class="text-2xl font-bold text-yellow-600 cursor-pointer hover:underline") DEMON CITY 
+            //-         p(class="text-xl") 1hr 42mins
+            //-         section(class="flex gap-0 mt-4 mb-4 items-center") 
+            //-             p(class="text-xl border-r-3 border-yellow-600 pr-3") 6.7 / 10
+            //-                 //- i(class="fa-solid fa-star")
+            //-             button(class="bg-[#2f2f2f] hover:bg-transparent py-2 px-6 hover:font-semibold hover:text-yellow-600 rounded-lg") Rate this
+            //-         details 
+            //-             summary(class="cursor-pointer hover:text-yellow-600") Show more
+            //-             p "Framed for his family's murder and left for dead, an ex-hitman will stop at nothing to exact revenge on the masked "demons" who have taken over his city.
+            //- section(class="flex gap-5 mt-4 mb-4") 
+            //-     div(class="cursor-pointer hover:opacity-80")
+            //-         a 
+            //-             img(src="/images/dirty-angels-card.webp", alt="Dirty angels" class="rounded-md")
+            //-     div(class=" flex flex-col justify-center") 
+            //-         a 
+            //-             h2(class="text-2xl font-bold text-yellow-600 cursor-pointer hover:underline") DIRTY ANGELS 
+            //-         p(class="text-xl") 1hr 44mins
+            //-         section(class="flex gap-0 mt-4 mb-4 items-center") 
+            //-             p(class="text-xl border-r-3 border-yellow-600 pr-3 flex gap-2") 
+            //-                 i(class="fa-solid fa-star")
+            //-                 span 6.2 / 10
+            //-             button(class="bg-[#2f2f2f] hover:bg-transparent py-2 px-6 hover:font-semibold hover:text-yellow-600 rounded-lg") Rate this
+            //-         details 
+            //-             summary(class="cursor-pointer hover:text-yellow-600") Show more
+            //-             p “Fight Your Way Out.” During the United States' 2021 withdrawal from Afghanistan, a group of female soldiers posing as medical relief are sent back in to rescue a group of kidnapped teenagers caught between ISIS and the Taliban.
+                    
+            //- section(class="flex gap-5 mt-4 mb-4") 
+            //-     div(class="cursor-pointer hover:opacity-80")
+            //-         a 
+            //-             img(src="/images/codes-of-war-card.webp", alt="Codes of War" class="rounded-md")
+            //-     div(class=" flex flex-col justify-center") 
+            //-         a 
+            //-             h2(class="text-2xl font-bold text-yellow-600 cursor-pointer hover:underline") Codes of war 
+            //-         p(class="text-xl") 1hr 54mins
+            //-         section(class="flex gap-0 mt-4 mb-4 items-center") 
+            //-             p(class="text-xl border-r-3 border-yellow-600 pr-3") 7.5 / 10
+            //-                 //- i(class="fa-solid fa-star")
+            //-             button(class="bg-[#2f2f2f] hover:bg-transparent py-2 px-6 hover:font-semibold hover:text-yellow-600 rounded-lg") Rate this
+            //-         details 
+            //-             summary(class="cursor-pointer hover:text-yellow-600") Show more
+            //-             p "War stories about family, ethics and honor include the true story of two U.S. Marines who in a span of six seconds, must stand their ground to stop a suicide truck bomb, a Navy Corpsman who attempts to hold on to his humanity, and a WW2 soldier who gets separated from his squad and is forced to re-evaluate his code.
