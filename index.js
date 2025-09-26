@@ -31,13 +31,13 @@ app.get('/movie', async(req, res) => {
     let movieResponse = await fetch("https://api.themoviedb.org/3/discover/movie", {
         headers: {
             accept: 'application/json',
-            Authorization: `Bearer ${process.env.TMDB_ACCESS_TOKEN}`
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNzIzNzUyN2JhMzZjYzk1MDYxODQ5NTUzN2E4NWVmZiIsIm5iZiI6MTczOTYxMDAwMC44OTQsInN1YiI6IjY3YjA1NzkwNGZkZGZkNTJlMzM1YWIzNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.az51CIFJYlpLrpM08lzZ7JGc6U74M5g0sZnEK6x6nIg' /*`Bearer ${process.env.TMDB_ACCESS_TOKEN}`*/
           },
     });
     let movieData = await movieResponse.json();
     console.log({movieData});
     res.render("movies", { data: movieData.results });
-    // res.json(movieData);
+    //res.json(movieData);
 
     // res.send('Home page')
 });
